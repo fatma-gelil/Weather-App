@@ -11,4 +11,7 @@ final class GetWeatherSuccess extends GetWeatherState {
   GetWeatherSuccess(this.weatherModel);
 }
 
-final class GetWeatherCubitFail extends GetWeatherState {}
+final class GetWeatherCubitFail extends GetWeatherState {
+  final String errorMessage;
+  GetWeatherCubitFail(this.errorMessage);
+}
