@@ -13,9 +13,10 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        //backgroundColor: Colors.blue,
         centerTitle: true,
-        title: const Text(
+        elevation: 10,
+        title: Text(
           'Weather App',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
@@ -25,7 +26,7 @@ class HomeView extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const SearchView();
+                      return  SearchView();
                     },
                   ),
                 );
@@ -43,9 +44,9 @@ class HomeView extends StatelessWidget {
       body: BlocBuilder<GetWeatherCubit,GetWeatherState>(
         builder: (context, state) {
           if (state is GetWeatherInitial) {
-            return const NoWeatherBody();
+            return  NoWeatherBody();
           } else if (state is GetWeatherSuccess) {
-            return WeatherInfoBody(weatherModel: state.weatherModel,);
+            return WeatherInfoBody(weather: state.weatherModel);
           } else if (state is GetWeatherLoading) {
             return Center(child: CircularProgressIndicator());
           } else {
