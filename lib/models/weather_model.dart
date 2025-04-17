@@ -18,7 +18,7 @@ class WeatherModel {
 
 //anyyyy api from the internet mustttt have factory model
   factory WeatherModel.fromjson(Map json) {
-    print(json.keys.toList());
+   // print(json.keys.toList());
     return WeatherModel(
         cityName: json['location']['name'],
         date: DateTime.parse(json['current']['last_updated']),

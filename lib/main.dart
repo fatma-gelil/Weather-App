@@ -21,7 +21,7 @@ class WeatherApp extends StatelessWidget {
           builder: (context, state) {
             String? condition;
             if (state is GetWeatherSuccess) {
-              print(state.weatherModel.condition);
+             // print(state.weatherModel.condition);
               condition = state.weatherModel.condition;
             }
             return MaterialApp(
